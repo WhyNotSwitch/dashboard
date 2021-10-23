@@ -6,8 +6,8 @@ window.onload = function() {
     value: getRandomInt(0, 100),
     min: 0,
     max: 100,
-    title: "Big Fella",
-    label: "pounds"
+    title: "Your Meters are Live!",
+    label: "Kw/hr"
   });
 
 
