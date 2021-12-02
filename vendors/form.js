@@ -9,3 +9,4 @@ function $closeForm() {
   document.getElementById("recharge-button1").style.display = "block";
   document.getElementById("customer-care").style.display = "block";
 }
+

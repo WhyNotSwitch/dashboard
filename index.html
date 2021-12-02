@@ -119,7 +119,7 @@
           </li>
           <li class="nav-item nav-settings d-none d-lg-flex">
             <a class="nav-link" href="payments.html">
-              USER ID : 010100110030
+              {{ request.user.email}}
             </a>
           </li>
         </ul>
@@ -201,7 +201,7 @@
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 class="font-weight-bold">Welcome Christwin</h3>
+                  <h3 class="font-weight-bold">Welcome {{ request.user }}</h3>
                   <h6 class="font-weight-normal mb-0">All systems are running smoothly!</h6>
                 </div>
                 <div class="col-12 col-xl-4">
@@ -223,7 +223,7 @@
               <div class="card data-icon-card-primary">
                 <div class="card-body">
                   <p class="card-title text-white">Available Credit Balance</p>
-                  <p class="fs-30 mb-2">$ 2,000</p>
+                  <p class="fs-30 mb-2">{{ account.credits }}</p>
                   <p class="text-white font-weight-500 mb-0">Approciatemently 4 days to next recharge</p>
                 </div>
               </div>
@@ -271,38 +271,25 @@
               <div id="payment-form" class="form-popup">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">TOP UP</h4>
+                    <h4 class="card-title">Select Amount</h4>
                     <p class="card-description">
                       Recharge your meter fast and easy.
                     </p>
                     <form class="forms-sample">
                       <div class="form-group">
-                        <label for="exampleInputName1">User ID</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail3">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword4">Meter number</label>
-                        <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleFormControlSelect1">Amount</label>
-                          <select id="exampleFormControlSelect1" class="form-control form-control-lg">
-                            <option selected>Choose...</option>
-                            <option>1,000</option>
-                            <option>5,000</option>
-                            <option>10,000</option>
-                            <option>25,000</option>
-                            <option>60,000</option>
-                            <option>100,000</option>
-                          </select> 
+                        <tbody>
+                          <td><button type="submit" class="btn btn btn-primary btn-rounded btn-fw">1,0000</button></td>
+                          <td><button type="submit" class="btn btn btn-primary btn-rounded btn-fw">3,000</button></td>
+                          <td><button type="submit" class="btn btn btn-primary btn-rounded btn-fw">5,000</button></td>
+                          <td><button type="submit" class="btn btn btn-primary btn-rounded btn-fw">10,000</button></td>
+                        </tbody>
                       </div>
                       
-                      <button type="submit" class="btn btn btn-primary btn-rounded btn-fw">Recharge now</button>
-                      <button type="button" class="btn btn btn-primary btn-rounded btn-fw cancel" onclick="$closeForm()">Close</button></form>
+                      <tbody>
+                        <td><button type="submit" class="btn btn btn-primary btn-rounded btn-fw">25,000</button></td>
+                        <button type="button" class="btn btn btn-primary btn-rounded btn-fw cancel" onclick="$closeForm()">Close</button></form>
+                      </tbody>
+
                     </form>
                   </div>
                 </div>
@@ -331,7 +318,8 @@
           </div>
 
           <div class="row">
-            <div class="col-md-7 col-sm-6 grid-margin stretch-card">
+
+            <div class="col-md-5 col-sm-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <p class="card-title">Transactions</p>
@@ -339,96 +327,93 @@
                     <table class="table table-striped table-borderless">
                       <thead>
                         <tr>
-                          <th>TARIFFS Plan</th>
                           <th>Amount</th>
-                          <th>Date</th>
-                          <th>Quantity</th>
+                          <th>Time</th>
+                          <th>Payment status</th>
                         </tr>  
                       </thead>
-                      <tbody>
-                        <tr>
-                          <td>FAMILY PLAN</td>
-                          <td class="font-weight-bold">$362</td>
-                          <td>21 Sep 2018</td>
-                          <td>941.20 kwh</td>
-                        </tr>
-                        <tr>
-                          <td>STUDENT PLAN</td>
-                          <td class="font-weight-bold">$116</td>
-                          <td>13 Jun 2018</td>
-                          <td>301.60 kwh</td>
-                        </tr>
-                        <tr>
-                          <td>OFFICE PLAN</td>
-                          <td class="font-weight-bold">$551</td>
-                          <td>28 Sep 2018</td>
-                          <td>1432.60 kwh</td>
-                        </tr>
-                        <tr>
-                          <td>OFFICE PLAN</td>
-                          <td class="font-weight-bold">$523</td>
-                          <td>30 Jun 2018</td>
-                          <td>1359.80 kwh</td>
-                        </tr>
-                        <tr>
-                          <td>ESTATE PLAN</td>
-                          <td class="font-weight-bold">$781</td>
-                          <td>01 Nov 2018</td>
-                          <td>2030.60 kwh</td>
-                        </tr>
-                        <tr>
-                          <td>FAMILY PLAN</td>
-                          <td class="font-weight-bold">$283</td>
-                          <td>20 Mar 2018</td>
-                          <td>735.80 kwh</td>
-                        </tr>
-                        <tr>
-                          <td>ESTATE PLAN</td>
-                          <td class="font-weight-bold">$897</td>
-                          <td>26 Oct 2018</td>
-                          <td>2332.20 kwh</td>
-                        </tr>
-                      </tbody>
+                      {% for transaction in pending %}
+                        <td>
+                          {{ transaction.amount }}
+                        </td>
+                        <td>
+                          {{ transaction.time}}
+                        </td>
+                        <td>
+                          <a  class="btn btn btn-primary btn-rounded btn-fw" href="{{ transaction.confirmation_url}}">Confirm</a>
+                        </td>
+                      {% endfor %}
                     </table>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-5 grid-margin stretch-card">
+            <div class="col-lg-7 col-sm-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">More from Switch</h4>
-                    <div class="owl-carousel owl-theme full-width" id="carouselExampleDark">
-                      <div class="item">
-                        <div class="card text-white">
-                          <img class="card-img" src="images/carousel/banner_4.jpg" alt="Card image">
-                          <div class="card-img-overlay d-flex">
-                            <div class="mt-auto text-center w-100">
-                              <h3>How Switch works.</h3>
-                              <h6 class="card-text mb-4 font-weight-normal">Nulla vitae elit libero, a pharetra augue mollis interdum.</h6>
+                    <p class="card-title">My Meters</p>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-borderless">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Active</th>
+                            <th>Address</th>
+                          </tr>  
+                        </thead>
+                        {% for meter in meters %}
+                          <td>
+                            {{ meter.vvid }}
+                          </td>
+                          <td>
+                            {{ meter.is.active }}
+                          </td>
+                          <td>
+                            {{ meter.site.address}}
+                          </td>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                <div class="col-lg-12 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title">More from Switch</h4>
+                      <div class="owl-carousel owl-theme full-width" id="carouselExampleDark">
+                        <div class="item">
+                          <div class="card text-white">
+                            <img class="card-img" src="images/carousel/banner_4.jpg" alt="Card image">
+                            <div class="card-img-overlay d-flex">
+                              <div class="mt-auto text-center w-100">
+                                <h3>How Switch works.</h3>
+                                <h6 class="card-text mb-4 font-weight-normal">Nulla vitae elit libero, a pharetra augue mollis interdum.</h6>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="item">
-                        <div class="card text-white">
-                          <img class="card-img" src="images/carousel/banner_5.jpg" alt="Card image">
-                          <div class="card-img-overlay d-flex">
-                            <div class="mt-auto text-center w-100">
-                              <h3>Third Slide Label</h3>
-                              <h6 class="card-text mb-4 font-weight-normal">Nulla vitae elit libero, a pharetra augue mollis interdum.</h6>
+                        <div class="item">
+                          <div class="card text-white">
+                            <img class="card-img" src="images/carousel/banner_5.jpg" alt="Card image">
+                            <div class="card-img-overlay d-flex">
+                              <div class="mt-auto text-center w-100">
+                                <h3>Third Slide Label</h3>
+                                <h6 class="card-text mb-4 font-weight-normal">Nulla vitae elit libero, a pharetra augue mollis interdum.</h6>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="item">
-                        <div class="card text-white">
-                          <img class="card-img" src="images/carousel/banner_6.jpg" alt="Card image">
-                          <div class="card-img-overlay d-flex">
-                            <div class="mt-auto text-center w-100">
-                              <h3>Third Slide Label</h3>
-                              <h6 class="card-text mb-4 font-weight-normal">Nulla vitae elit libero, a pharetra augue mollis interdum.</h6>
+                        <div class="item">
+                          <div class="card text-white">
+                            <img class="card-img" src="images/carousel/banner_6.jpg" alt="Card image">
+                            <div class="card-img-overlay d-flex">
+                              <div class="mt-auto text-center w-100">
+                                <h3>Third Slide Label</h3>
+                                <h6 class="card-text mb-4 font-weight-normal">Nulla vitae elit libero, a pharetra augue mollis interdum.</h6>
+                              </div>
                             </div>
                           </div>
                         </div>
