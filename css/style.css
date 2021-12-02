@@ -8943,6 +8943,10 @@ input[type="checkbox"] {
   padding: 0;
 }
 
+.form-popup{
+  display: none;
+}
+
 textarea {
   overflow: auto;
   resize: vertical;
