@@ -14,20 +14,22 @@
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../js/select.dataTables.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="module" src="js/api_caller.js"></script>
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="css/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="images/switch.jpg" />
+  <link rel="shortcut icon" href="images/Switch.jpg" />
 </head>
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="images/switch.jpg" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/switch.jpg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="../../../images/Switch.jpg" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="../../../images/Switch.jpg" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -115,7 +117,7 @@
           </li>
           <li class="nav-item nav-settings d-none d-lg-flex">
             <a class="nav-link" href="http:#">
-              USER ID : 010100110030
+              USER ID : 2ed12034324fded223
             </a>
           </li>
         </ul>
@@ -171,10 +173,29 @@
           </li>
         </ul>
       </nav>
+
+      
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="col-12">
+            <div class="col-12 col-lg-6 mt-5 align-content-center" id="login-page">
+              <form>
+                  <div class="mb-3">
+                      <label for="meter" class="form-label important-label">Meter Id</label>
+                      <input type="text" class="form-control important-label" id="username" placeholder="Meterid" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="Voltage" class="form-label important-label">Voltage</label>
+                    <input type="number" step="0.1" class="form-control important-label" id="username" placeholder="Address" required>
+                </div>
+                  <div class="mb-3">
+                      <label for="Amount" class="form-label">Amount</label>
+                      <input type="number" class="form-control" id="Amount" placeholder="Amount" required>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-block" id="activate-btn">Activate</button>
+              </form>
+          </div>
       
           </div>
         </div>
