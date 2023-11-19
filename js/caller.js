@@ -5,22 +5,25 @@ $(document).ready(function() {
     $('#activate-btn').click(function(event) {
         console.log('Activation button is clicked');
         event.preventDefault();
-        var Meter_id = $('#Address').val();
-        var Amount = $('#Amount').val();
+        showAlert('Activated', 'alert-success');
+        // var Meter_id = $('#meterid').val();
+        // var Username = $('#username').val();
+        // var Amount = $('#amount').val();
 
-        axios.get('http://localhost:5000/meters', {
-            Address : Address,
-            Amount: Amount
-        })
-        .then(function(response) {
-            showAlert('Activated', 'alert-success');
-            var token = response.data.token;
-            localStorage.setItem('token', token);
-            // window.location.href = 'index.html';
-        })
-        .catch(function (error) {
-            LoginAlert('Missing details ' + error.message, 'alert-danger');
-        })
+        // axios.get('http://localhost:5000/meters', {
+        //     Meter_id : Meter_id,
+        //     Username: Username,
+        //     Amount: Amount
+        // })
+        // .then(function(response) {
+        //     showAlert('Activated', 'alert-success');
+        //     // var token = response.data.token;
+        //     // localStorage.setItem('token', token);
+        //     // window.location.href = 'index.html';
+        // })
+        // .catch(function (error) {
+        //     LoginAlert('Missing details ' + error.message, 'alert-danger');
+        // })
       });
 
       $('#logout').click(function(event) {
